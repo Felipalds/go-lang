@@ -14,7 +14,7 @@ var world = map[string]string{
 	"es": "mundo",
 }
 
-func Hello(name, lang string) string {
+func Hello(name, lang string) (hello_string string) {
 	if lang == "" {
 		lang = "en"
 	}
