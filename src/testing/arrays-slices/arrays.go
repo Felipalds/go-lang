@@ -14,3 +14,21 @@ func SumSlice(sli []int) (sum int) {
 	}
 	return
 }
+
+func SumAllSmart(numbers ...[]int) []int {
+	length := len(numbers)
+	resp := make([]int, length)
+
+	for i, slc := range numbers {
+		resp[i] = SumSlice(slc)
+	}
+	return resp
+}
+
+func SumAllDumb(numbers ...[]int) []int {
+	var resp []int
+	for _, slc := range numbers {
+		resp = append(resp, SumSlice(slc))
+	}
+	return resp
+}
